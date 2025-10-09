@@ -13,12 +13,6 @@ import LoginPage from "./pages/LoginPage.jsx";
 import SignupPage from "./pages/SignupPage.jsx";
 import OnboardingPage from "./pages/OnboardingPage.jsx";
 
-function RouteLogger() {
-  const loc = useLocation();
-  console.log("PATH:", loc.pathname);
-  return null;
-}
-
 function Protected({ children }) {
   const [loading, setLoading] = useState(true);
   const [ok, setOk] = useState(false);
@@ -30,7 +24,6 @@ function Protected({ children }) {
 
     const fallback = setTimeout(() => {
       if (!isMounted) return;
-      console.warn("profile check timeout — proceeding");
       setOk(true);
       setNeedsOnboarding(false);
       setLoading(false);
@@ -85,7 +78,6 @@ function Protected({ children }) {
 export default function App() {
   return (
     <>
-      <RouteLogger />
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
