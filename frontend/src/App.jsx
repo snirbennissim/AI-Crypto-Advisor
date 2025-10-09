@@ -62,23 +62,6 @@ function Protected({ children }) {
         }
       }
     };
-    /*
-    axiosInstance
-      .get("/onboarding/profile")
-      .then(({ data }) => {
-        if (!isMounted) {
-          return;
-        }
-        console.log("PROFILE:", data);
-        setOk(true);
-        setNeedsOnboarding(!data.onboarded);
-      })
-      .catch((error) => {
-        console.log("PROFILE ERROR:", error?.response?.status, error?.message);
-        setOk(false);
-      })
-      .finally(() => setLoading(false));
-*/
     return () => {
       isMounted = false;
     };

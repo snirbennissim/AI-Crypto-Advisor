@@ -142,7 +142,6 @@ export async function getAiInsight({
       assets?.length ? assets.join(", ") : "BTC, ETH"
     }. ${topNews}`;
 
-  console.log("[insight] prompt:", prompt);
   try {
     const insightViaHF = await huggingfaceInsight(prompt);
     if (insightViaHF) {

@@ -73,7 +73,7 @@ export default function OnboardingPage() {
       {/* Card */}
       <div className="card" style={{ maxWidth: 760, margin: "16px auto" }}>
         <h2 className="h2">Onboarding</h2>
-        {/* נכסים */}
+        {/* assets */}
         <h3 className="h3" style={{ marginTop: 8 }}>
           What crypto assets are you interested in?
         </h3>
@@ -98,7 +98,7 @@ export default function OnboardingPage() {
           ))}
         </div>
 
-        {/* סוג משקיע */}
+        {/* investor type */}
         <h3 className="h3" style={{ marginTop: 16 }}>
           What type of investor are you?
         </h3>
@@ -115,7 +115,7 @@ export default function OnboardingPage() {
           ))}
         </select>
 
-        {/* סוגי תוכן */}
+        {/* content types */}
         <h3 className="h3" style={{ marginTop: 16 }}>
           What kind of content would you like to see?
         </h3>
