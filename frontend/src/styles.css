@@ -1,0 +1,244 @@
+:root {
+  --bg: #0b1214; /* very dark teal */
+  --surface: #0f1a1c; /* panel */
+  --card: #122022;
+  --card-2: #0f1b1d;
+  --border: #1b2b2e;
+  --text: #e6f1ef;
+  --muted: #9fb3b1;
+
+  --mongo: #13aa52; /* MongoDB green */
+  --mongo-700: #0f8a43;
+  --accent: #00ed64; /* brighter green accent */
+  --danger: #ef4444;
+
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 800px at -10% -10%, #0e1618 0%, var(--bg) 60%),
+    var(--bg);
+  color: var(--text);
+  font:
+    14px/1.6 ui-sans-serif,
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* App shell */
+.app-shell {
+  max-width: 1150px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+.leaf {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  border-radius: 4px;
+  background: conic-gradient(
+    from 200deg,
+    var(--mongo),
+    var(--accent),
+    var(--mongo)
+  );
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 4px 18px rgba(0, 0, 0, 0.4);
+  mask:
+    radial-gradient(12px at 60% 40%, #000 98%, transparent 100%) exclude,
+    radial-gradient(10px at 30% 70%, #000 98%, transparent 100%) exclude;
+}
+.badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.badge {
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: rgba(19, 170, 82, 0.08);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+.card {
+  grid-column: span 12;
+  background: linear-gradient(180deg, var(--card), var(--card-2));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+@media (min-width: 900px) {
+  .span-4 {
+    grid-column: span 4;
+  }
+  .span-6 {
+    grid-column: span 6;
+  }
+  .span-8 {
+    grid-column: span 8;
+  }
+}
+
+/* Typography */
+.h2 {
+  font-size: 22px;
+  margin: 0 0 10px;
+}
+.h3 {
+  font-size: 16px;
+  margin: 0 0 8px;
+  color: #d6efe3;
+}
+.muted {
+  color: var(--muted);
+}
+
+/* Lists */
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.item {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.item:last-child {
+  border-bottom: none;
+}
+.item a {
+  color: var(--text);
+  text-decoration: none;
+}
+.item a:hover {
+  color: var(--accent);
+}
+
+/* Buttons */
+.btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: #0e191b;
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition:
+    0.15s transform,
+    0.15s border-color,
+    0.15s background;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  border-color: #253b3e;
+}
+.btn.primary {
+  background: var(--mongo);
+  border-color: var(--mongo);
+  color: #06120f;
+}
+.btn.primary:hover {
+  background: var(--mongo-700);
+  border-color: var(--mongo-700);
+}
+.btn.ghost {
+  background: transparent;
+}
+.btn.good {
+  border-color: #16a34a;
+}
+.btn.bad {
+  border-color: var(--danger);
+}
+
+/* Prices */
+.price-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.price-id {
+  font-weight: 700;
+}
+.price-num {
+  min-width: 90px;
+  text-align: right;
+}
+.price-chg {
+  min-width: 80px;
+  text-align: right;
+}
+.up {
+  color: #34d399;
+}
+.down {
+  color: #f87171;
+}
+
+/* Forms */
+.form {
+  display: grid;
+  gap: 10px;
+}
+.input,
+select {
+  background: #0c1719;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 10px;
+  outline: none;
+}
+.input:focus,
+select:focus {
+  border-color: #254649;
+  box-shadow: 0 0 0 2px rgba(19, 170, 82, 0.12);
+}
+.form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 6px;
+}
