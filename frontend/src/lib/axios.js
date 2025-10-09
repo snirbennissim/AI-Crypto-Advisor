@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "http://localhost:5003",
+  baseURL: "https://ai-crypto-advisor.onrender.com",
   withCredentials: true,
   timeout: 10000,
 });
