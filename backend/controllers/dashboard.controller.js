@@ -20,9 +20,9 @@ export const getPersonalizedDashboard = async (req, res) => {
       contentTypes = ["Market News", "Charts", "Fun Memes"],
     } = userPrefs;
 
-    const coinsPricesPref = contentTypes.includes("Charts");
-    const aiInsightPref = contentTypes.includes("Social");
-    const memePref = contentTypes.includes("Fun Memes");
+    const coinsPricesPref = true;
+    const aiInsightPref = true;
+    const memePref = true;
 
     const [marketNews, coinPrices, aiInsight, meme] = await Promise.all([
       getPersonalizedMarketNews({ assets, investorType, contentTypes }),
